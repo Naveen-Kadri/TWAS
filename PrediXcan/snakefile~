@@ -1,0 +1,250 @@
+import os
+'''
+'''
+configfile: '/cluster/home/nkadri/TWAS/SNAKES/config.yaml'
+OUT_DIR = config['OUT_DIR']
+include: '../train/train.smk'
+mphenos = ['expression', 'splicing']
+
+
+# PROGRAMS
+predict = '/cluster/home/nkadri/TWAS/MetXcan/software/Predict.py '
+association = '/cluster/home/nkadri/TWAS/MetXcan/software/PrediXcanAssociation.py '
+
+
+
+phenodir = '/cluster/work/pausch/xena/gwas/phenotypes/residuals_lm/over8/'
+myfiles = os.listdir(phenodir)
+pattern_tokeep = 'res_rm.phen'
+myfiles = [myfile for myfile in myfiles if pattern_tokeep in myfile]
+phenofiles = {myfile.split("_")[1]: phenodir + myfile for myfile in myfiles}
+# # add two other phenotypes
+phenofiles["nrr"] = "/cluster/work/pausch/xena/gwas/phenotypes/from_maya/phen/phenos_bull_fertility_CH_n_1130_bulls_nrr.phen"
+phenofiles["sbf"] = "/cluster/work/pausch/xena/gwas/phenotypes/from_maya/phen/phenos_bull_fertility_CH_n_1130_bulls_sbf.phen"
+phenofiles['fbkall'] = "/cluster/work/pausch/xena/gwas/phenotypes/from_hubert/fbkall.phen"
+
+def get_phenofile(wildcards):
+    return phenofiles[wildcards.trait]
+
+
+tissues = ['testis', 'vas_d', 'epi_h']
+inheritances = ['additive', 'nonadditive']
+chromosomes = range(1, 30)
+traits = list(phenofiles.keys())
+print(f'traits are  {traits}')
+
+
+to_exclude = ['nrr', 'sbf']
+traits = [trait for trait in traits if trait not in to_exclude]
+
+
+print (f'traits are {traits}')
+
+rule all:
+    input:
+        expand(OUT_DIR + '/{mpheno}/PrediXcan/{trait}/manhattan_{mpheno}_{trait}_{inheri}.tiff', mpheno=mphenos, trait=traits, inheri=inheritances)
+                
+    
+
+# rule format_pheno:
+#     input:
+#         infile = get_phenofile
+#     output:
+#         pheno = OUT_DIR + '/PHENOTYPES/{trait}/phenotypes.txt'
+#     shell:
+#         "cat <(echo 'FID\tIID\tpheno') {input.infile} > {output.pheno}"
+
+# rule get_vcf:
+#     ''' Extract the phenotyped samples form the (large) imputed vcf'''
+#     input:
+#         vcf = config['vcfs']['gwas'],
+#         samples = rules.format_pheno.output.pheno
+#     output:
+#         vcf = OUT_DIR + '/PHENOTYPES/{trait}/CHR{chr}/imputed.vcf.gz'
+#     threads:
+#         4
+#     resources:
+#         mem_mb = 1000,
+#         walltime = "04:00"
+#     shell:
+#         '''
+#         module load bcftools;
+#         bcftools view {input.vcf} \
+#         --samples-file <(cut -f1 {input.samples} |tail -n+2  ) \
+#         --threads {threads} \
+#         --output {output.vcf} \
+#         --output-type z \
+#         --force-samples
+#         '''
+
+# rule predict:
+#     '''--prediction_output {output.result}  {params.out_type} \ for hdf5 add this
+#     VCF does not have the id which will be created on the fly.. with chr, pos, ref, alt separated by _'''
+#     input:
+#         db = rules.filter_database.output.database,
+#         vcf = rules.get_vcf.output.vcf
+#     output:
+#         mpheno = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/predicted_mpheno.txt',
+#         summary = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/summary.txt',
+#     params:
+#         out_type = 'HDF5'  # not used default is .txt
+#     resources:
+#         mem_mb = 2000,
+#         walltime = "00:30"
+#     shell:
+#         '''
+#         python {predict} \
+#         --model_db_path {input.db} \
+#         --vcf_genotypes {input.vcf} \
+#         --vcf_mode genotyped \
+#         --on_the_fly_mapping METADATA {{}}_{{}}_{{}}_{{}} \
+#         --prediction_output {output.mpheno} \
+#         --prediction_summary_output {output.summary} \
+#         --throw
+#         '''
+
+# rule fix_id_order:
+#     '''
+#     The order of IDs in the expr and pheno files should match!!
+#     phenofile is repeatedly written -- ok for now -- maybe mark as temp ?
+#     '''
+#     input:
+#         pheno = rules.format_pheno.output.pheno,
+#         mpheno = rules.predict.output.mpheno
+#     output:
+#         mpheno = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/predicted_mpheno_id_order_fixed.txt',
+#         pheno = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/pheno_id_order_fixed.txt',
+#     params:
+#         phenos_column = "pheno"
+#     resources:
+#         mem_mb = 8000,
+#         walltime = "00:30"
+#     script:
+#         'fix_id_order.py'
+
+# rule remove_zero_prediction:
+#     '''
+#     For some genes the predicted expression is all zeros
+#     I do not know why ?!
+#     but the rule association does not work with these genes -- so removed
+#     '''
+#     input:
+#         mpheno = rules.fix_id_order.output.mpheno
+#     output:
+#         mpheno = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/predicted_mpheno_id_order_fixed_zeros_removed.txt',
+#     script:
+#         'remove_zero_prediction.py'
+
+# rule association:
+#     ''' covariates can be used.. here phnotypes are residuals so no covariates are used
+#     if hdf5 fomat is used --hdf5_expression_file {input.hdf5} \
+#     '''
+#     input:
+#         mpheno = rules.remove_zero_prediction.output.mpheno,
+#         pheno = rules.fix_id_order.output.pheno
+#     output:
+#         result = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/result.txt'
+#     params:
+#         phenos_column = "pheno"
+#     resources:
+#         mem_mb = 2000,
+#         walltime = "04:00"
+#     shell:
+#         '''
+#         python {association} \
+#         --expression_file {input.mpheno} \
+#         --input_phenos_file {input.pheno} \
+#         --input_phenos_column {params.phenos_column} \
+#         --output {output.result} \
+#         --mode linear \
+#         --throw
+#         '''
+# rule add_cordinates:
+#     input:
+#         result = rules.association.output.result,
+#         annotation = OUT_DIR + '/{mpheno}/{tissue}/annotation.txt'
+#     output:
+#         outfile = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/CHR{chr}/result_with_cords.txt.gz'
+#     resources:
+#         mem_mb = 4000,
+#         walltime = '00:20'
+#     script:
+#         'add_cordinates.py'
+
+# rule make_genome:
+#     input:
+#         infiles = expand (OUT_DIR + \
+#                           '/{{mpheno}}/PrediXcan/{{trait}}/{{tissue}}/CHR{chr}/result_with_cords.txt.gz', chr=chromosomes)
+#     output:
+#         outfile = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/result_with_cords.txt.gz'
+#     script:
+#         "make_genome.py"
+        
+rule combine_tissues:
+    input:
+        infiles = expand (OUT_DIR + \
+                          '/{{mpheno}}/PrediXcan/{{trait}}/{tissue}/result_with_cords.txt.gz', tissue=tissues)
+    output:
+        outfile = OUT_DIR + \
+            '/{mpheno}/PrediXcan/{trait}/result_with_cords.txt.gz'
+    resources:
+        mem_mb=4000,
+        walltime='00:20'
+    params:
+        tissues = tissues    
+    script:
+        "combine_tissues.py"
+
+    
+
+        
+# rule manhattan:
+#     input:
+#         twas = expand(OUT_DIR +
+#                       '/{{mpheno}}/PrediXcan/{{trait}}/{{tissue}}/CHR{chr}/result_with_cords.txt.gz', chr=chromosomes),
+#         gwas = expand(
+#             '/cluster/work/pausch/xena/gwas/new/plots/{{trait}}/forplot_chr{chr}.txt.gz', chr=chromosomes)
+#     output:
+#         plot_file = OUT_DIR + \
+#             '/{mpheno}/PrediXcan/{trait}/{tissue}/manhattan_{mpheno}_{trait}_{tissue}_{inheri}.tiff'
+#     params:
+#         thresh_line = 6,
+#         maf_thresh = 0.005
+#     resources:
+#         mem_mb = 16000,
+#         walltime = '04:00'
+#     script:
+#         'manhattan_mirror.R'
+
+
+rule manhattan2:
+    '''
+    gwas files have pvalues for both additive and non additive gwas
+    '''
+    input:
+        twas = rules.combine_tissues.output.outfile,
+        gwas = expand(
+            '/cluster/work/pausch/xena/gwas/new/plots/{{trait}}/forplot_chr{chr}.txt.gz', chr=chromosomes)
+    output:
+        plot_file = OUT_DIR + \
+            '/{mpheno}/PrediXcan/{trait}/manhattan_{mpheno}_{trait}_{inheri}.tiff'
+    params:
+        thresh_line = 6,
+        maf_thresh = 0.005,
+        tissues=tissues    
+    resources:
+        mem_mb = 8000,
+        walltime = '01:00'
+    script:
+        'alltissues_mirror_manhattan.R'
+
+
+        

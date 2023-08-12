@@ -1,0 +1,20 @@
+molecular_pheno:
+  expression: '/cluster/work/pausch/naveen/TWAS/TPM/{tissue}.tsv'
+  splicing: '/cluster/work/pausch/naveen/TWAS/EXC_RATIOS/{tissue}.bed.gz'
+
+covariates:
+  expression: '/cluster/work/pausch/xena/eQTL/cis_all/{tissue}/{tissue}_covariates.txt'
+  splicing: '/cluster/work/pausch/naveen/TWAS/EXC_RATIOS/covariates_{tissue}.txt'
+  
+vcfs:
+  twas: '/cluster/work/pausch/naveen/ASE/VCF/chr_{chr}_beagle5.2.vcf.gz'
+  gwas: '/cluster/work/pausch/naveen/SNPDATA/TOSEQ/CHR{chr}/combined.vcf.gz'
+    
+gtf: '/cluster/work/pausch/naveen/ASE/INPUTS/Bos_taurus.ARS-UCD1.2.104.gtf.gz'
+    
+OUT_DIR: '/cluster/work/pausch/naveen/TWAS'
+
+old_gwas_files : '/cluster/work/pausch/xena/gwas/gcta/results/{{trait}}/BV/sire/CHR{chr}/result.mlma'
+
+gwas_files : '/cluster/work/pausch/xena/gwas/new/{inheri}/{{trait}}/CHR{chr}/result.mlma.gz'
+    

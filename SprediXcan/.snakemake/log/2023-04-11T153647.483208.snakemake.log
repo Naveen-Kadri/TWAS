@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /cluster/home/nkadri/TWAS/SNAKES/spredi/spredi.smk, line 32:
+Missing input files for rule all:
+    affected files:
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/fbkall/result_with_cords.txt.gz

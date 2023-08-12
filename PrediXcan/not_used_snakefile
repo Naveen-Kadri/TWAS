@@ -1,0 +1,197 @@
+import os
+'''
+info: "https://github.com/hakyimlab/MetaXcan/wiki/Individual-level-PrediXcan:-introduction,-tutorials-and-manual"
+The first step is implemented in Predict.py.
+The second step is implemented in PrediXcanAssociation.py.
+Both steps are wrapped in PrediXcan.py, although I find it more convenient to run each step at a time.
+Running one step at a time is easier to troubleshoot when running on a cohort for the first time.
+Should works conceptually wtih any molecular phenotypes... so try splicing!
+
+# DEPENDENCIES
+pip3 install pyliftover
+pip3 install scipy
+pip3 install cyvcf2
+pip3 install patsy
+example data : https://zenodo.org/record/3691952#.XllXmul7m90
+also requires gcc >4.5
+
+# PROBLEMS
+1.Cannot use the mode 'imputed'  in the rule predict. 'genotyped' works file
+2. I do not have imputed sequence for all phenotyped samples.. so some samples had to be removed -- check the rule subset_phenotypes
+
+Does it makes sense to run the rule predict chromosome-wise ?
+I think so as only SNPs in cis of the gene are used in the prediction model
+
+
+'''
+
+OUT_DIR = '/cluster/work/pausch/naveen/TWAS/PREDICT'
+
+# PROGRAMS
+predict = '/cluster/home/nkadri/TWAS/MetXcan/software/Predict.py '
+association = '/cluster/home/nkadri/TWAS/MetXcan/software/PrediXcanAssociation.py '
+
+
+# FILES
+''' This only has genotypes for RNA seq samples.. We need genotypes for all phenotyped samples..
+We do have the imputed sequenced data, subset it to keep only the phenotyped samples
+'''
+# vcf = '/cluster/work/pausch/naveen/ASE/VCF/chr_{chr}_beagle5.2.vcf.gz'
+vcf = '/cluster/work/pausch/naveen/SNPDATA/TOSEQ/CHR{chr}/combined.vcf.gz'
+db = '/cluster/work/pausch/naveen/TWAS/DB/{tissue}/filtered_signif.db'
+
+
+# Results moved to runI
+#trait_file = '/cluster/work/pausch/xena/gwas/phenotypes/residuals_naveen/res_{trait}.phen'
+# traits = glob_wildcards(
+# trait_file).trait
+
+phenodir = '/cluster/work/pausch/xena/gwas/phenotypes/residuals_lm/over8/'
+myfiles = os.listdir(phenodir)
+pattern_tokeep = 'res_rm.phen'
+myfiles = [myfile for myfile in myfiles if pattern_tokeep in myfile]
+phenofiles = {myfile.split("_")[1]: phenodir + myfile for myfile in myfiles}
+# # add two other phenotypes
+phenofiles["nrr"] = "/cluster/work/pausch/xena/gwas/phenotypes/from_maya/phen/phenos_bull_fertility_CH_n_1130_bulls_nrr.phen"
+phenofiles["sbf"] = "/cluster/work/pausch/xena/gwas/phenotypes/from_maya/phen/phenos_bull_fertility_CH_n_1130_bulls_sbf.phen"
+# Traits run :
+# for mykey, myval in phenofiles.items():
+#     print(mykey, myval)
+
+
+def get_phenofile(wildcards):
+    return phenofiles[wildcards.trait]
+
+
+tissues = ['testis', 'vas_d', 'epi_h']
+chromosomes = range(1, 30)
+traits = list(phenofiles.keys())
+print(f'traits are  {traits}')
+
+
+rule all:
+    input:
+        expand(OUT_DIR + '/{trait}/phenotypes.txt', trait=traits),
+        expand(OUT_DIR + '/{trait}/CHR{chr}/imputed.vcf.gz',
+               trait=traits, chr=chromosomes),
+        expand(OUT_DIR + '/{trait}/{tissue}/CHR{chr}/expression.txt',
+               trait=traits, tissue=tissues, chr=chromosomes),
+        expand(OUT_DIR + '/{trait}/{tissue}/CHR{chr}/association_result.txt',
+               trait=traits, tissue=tissues, chr=chromosomes)
+
+
+rule format_pheno:
+    input:
+        infile = get_phenofile
+    output:
+        pheno = OUT_DIR + '/{trait}/phenotypes.txt'
+    shell:
+        "cat <(echo 'FID\tIID\tpheno') {input.infile} > {output.pheno}"
+
+rule get_vcf:
+    ''' Extract the phenotyped samples form the (large) imputed vcf'''
+    input:
+        vcf = vcf,
+        samples = rules.format_pheno.output.pheno
+    output:
+        vcf = OUT_DIR + '/{trait}/CHR{chr}/imputed.vcf.gz'
+    threads:
+        4
+    resources:
+        mem_mb = 1000,
+        walltime = "04:00"
+    shell:
+        '''
+        module load bcftools;
+        bcftools view {input.vcf} \
+        --samples-file <(cut -f1 {input.samples} |tail -n+2  ) \
+        --threads {threads} \
+        --output {output.vcf} \
+        --output-type z \
+        --force-samples
+        '''
+
+rule predict:
+    '''--prediction_output {output.result}  {params.out_type} \ for hdf5 add this
+    VCF does not have the id which will be created on the fly.. with chr, pos, ref, alt separated by _'''
+    input:
+        db = db,
+        vcf = rules.get_vcf.output.vcf
+    output:
+        expression = OUT_DIR + '/{trait}/{tissue}/CHR{chr}/expression.txt',
+        summary = OUT_DIR + '/{trait}/{tissue}/CHR{chr}/summary.txt'
+    params:
+        out_type = 'HDF5'  # not used default is .txt
+    resources:
+        mem_mb = 2000,
+        walltime = "00:30"
+    shell:
+        '''
+        python {predict} \
+        --model_db_path {input.db} \
+        --vcf_genotypes {input.vcf} \
+        --vcf_mode genotyped \
+        --on_the_fly_mapping METADATA {{}}_{{}}_{{}}_{{}} \
+        --prediction_output {output.expression} \
+        --prediction_summary_output {output.summary} \
+        --throw
+        '''
+
+rule fix_id_order:
+    '''
+    The order of IDs in the expr and pheno files should match!!
+    '''
+    input:
+        pheno = rules.format_pheno.output.pheno,
+        expr = rules.predict.output.expression
+    output:
+        pheno = OUT_DIR + \
+            '/{trait}/{tissue}/CHR{chr}/phenotypes_id_order_fixed.txt',
+        expr = OUT_DIR + \
+            '/{trait}/{tissue}/CHR{chr}/expression_id_order_fixed.txt'
+    params:
+        phenos_column = "pheno"
+    resources:
+        mem_mb = 8000,
+        walltime = "00:30"
+    script:
+        'fix_id_order.py'
+
+rule remove_zero_prediction:
+    '''
+    For some genes the predicted expression is all zeros
+    I do not know why ?!
+    but the rule association does not work with these genes -- so removed
+    '''
+    input:
+        expr = rules.fix_id_order.output.expr
+    output:
+        expr = OUT_DIR + \
+            '/{trait}/{tissue}/CHR{chr}/expression_id_order_fixed_zeros_removed.txt'
+    script:
+        'remove_zero_prediction.py'
+
+rule association:
+    ''' covariates can be used.. here phnotypes are residuals so no covariates are used
+    if hdf5 fomat is used --hdf5_expression_file {input.hdf5} \
+    '''
+    input:
+        expression = rules.remove_zero_prediction.output.expr,
+        pheno = rules.fix_id_order.output.pheno
+    output:
+        result = OUT_DIR + '/{trait}/{tissue}/CHR{chr}/association_result.txt'
+    params:
+        phenos_column = "pheno"
+    resources:
+        mem_mb = 2000,
+        walltime = "00:30"
+    shell:
+        '''
+        python {association} \
+        --expression_file {input.expression} \
+        --input_phenos_file {input.pheno} \
+        --input_phenos_column {params.phenos_column} \
+        --output {output.result} \
+        --mode linear \
+        --throw
+        '''

@@ -1,0 +1,678 @@
+Building DAG of jobs...
+Using shell: /cluster/apps/sfos/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+SPrediXcan       32              1              1
+all               1              1              1
+total            33              1              1
+
+Select jobs to execute...
+
+[Sun Mar 26 14:59:05 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/testis/result.txt
+    jobid: 151
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=head, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=4072, disk_mib=3884, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 151 with external jobid '256697659 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-head.tissue-testis.out'.
+
+[Sun Mar 26 14:59:06 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/epi_h/result.txt
+    jobid: 141
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=con, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2065, disk_mib=1970, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 141 with external jobid '256697660 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:06 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/epi_h/result.txt
+    jobid: 66
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=head, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2229, disk_mib=2126, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 66 with external jobid '256697661 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:07 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/testis/result.txt
+    jobid: 279
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=tail, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=4043, disk_mib=3856, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 279 with external jobid '256697662 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-tail.tissue-testis.out'.
+
+[Sun Mar 26 14:59:08 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/testis/result.txt
+    jobid: 130
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=tail, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2539, disk_mib=2422, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 130 with external jobid '256697663 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-testis.out'.
+
+[Sun Mar 26 14:59:08 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/testis/result.txt
+    jobid: 285
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=con, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=3909, disk_mib=3728, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 285 with external jobid '256697664 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-con.tissue-testis.out'.
+
+[Sun Mar 26 14:59:09 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/epi_h/result.txt
+    jobid: 215
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=head, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2818, disk_mib=2688, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 215 with external jobid '256697665 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-head.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:10 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/testis/result.txt
+    jobid: 145
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=ntar, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2478, disk_mib=2364, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 145 with external jobid '256697666 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-testis.out'.
+
+[Sun Mar 26 14:59:10 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/testis/result.txt
+    jobid: 289
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=ntar, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=3982, disk_mib=3798, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 289 with external jobid '256697667 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-ntar.tissue-testis.out'.
+
+[Sun Mar 26 14:59:11 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/epi_h/result.txt
+    jobid: 280
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=tail, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2789, disk_mib=2660, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 280 with external jobid '256697668 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-tail.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:11 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/epi_h/result.txt
+    jobid: 286
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=con, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2654, disk_mib=2532, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 286 with external jobid '256697669 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-con.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:12 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/epi_h/result.txt
+    jobid: 147
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=ntar, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2139, disk_mib=2040, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 147 with external jobid '256697670 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:13 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/testis/result.txt
+    jobid: 142
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=mot, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2474, disk_mib=2360, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 142 with external jobid '256697671 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-testis.out'.
+
+[Sun Mar 26 14:59:13 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/testis/result.txt
+    jobid: 136
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=cnt, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2403, disk_mib=2292, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 136 with external jobid '256697672 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-testis.out'.
+
+[Sun Mar 26 14:59:14 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/epi_h/result.txt
+    jobid: 290
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=ntar, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2728, disk_mib=2602, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 290 with external jobid '256697673 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-ntar.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:15 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/testis/result.txt
+    jobid: 287
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=mot, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=3979, disk_mib=3795, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 287 with external jobid '256697674 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-mot.tissue-testis.out'.
+
+[Sun Mar 26 14:59:15 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/testis/result.txt
+    jobid: 281
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=vol, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=4019, disk_mib=3833, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 281 with external jobid '256697675 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-vol.tissue-testis.out'.
+
+[Sun Mar 26 14:59:16 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/epi_h/result.txt
+    jobid: 138
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=cnt, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2064, disk_mib=1969, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 138 with external jobid '256697676 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:17 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/testis/result.txt
+    jobid: 291
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=fbkall, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=4212, disk_mib=4017, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 291 with external jobid '256697677 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-fbkall.tissue-testis.out'.
+
+[Sun Mar 26 14:59:17 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/testis/result.txt
+    jobid: 148
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=fbkall, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2708, disk_mib=2583, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 148 with external jobid '256697678 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-testis.out'.
+
+[Sun Mar 26 14:59:18 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/epi_h/result.txt
+    jobid: 292
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=fbkall, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2958, disk_mib=2821, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 292 with external jobid '256697679 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-fbkall.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:18 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/epi_h/result.txt
+    jobid: 282
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=vol, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2765, disk_mib=2637, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 282 with external jobid '256697680 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-vol.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:19 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/epi_h/result.txt
+    jobid: 150
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=fbkall, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2369, disk_mib=2260, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 150 with external jobid '256697681 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:20 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/epi_h/result.txt
+    jobid: 144
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=mot, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2136, disk_mib=2038, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 144 with external jobid '256697682 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:20 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/testis/result.txt
+    jobid: 1
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=head, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2567, disk_mib=2449, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 1 with external jobid '256697684 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-testis.out'.
+
+[Sun Mar 26 14:59:21 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/testis/result.txt
+    jobid: 139
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=con, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2404, disk_mib=2293, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 139 with external jobid '256697685 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-testis.out'.
+
+[Sun Mar 26 14:59:22 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/testis/result.txt
+    jobid: 133
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/testis/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=vol, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2514, disk_mib=2398, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 133 with external jobid '256697686 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-testis.out'.
+
+[Sun Mar 26 14:59:22 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/epi_h/result.txt
+    jobid: 288
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=mot, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2725, disk_mib=2599, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 288 with external jobid '256697687 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-mot.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:23 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/testis/result.txt
+    jobid: 283
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/testis/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=cnt, tissue=testis
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=3908, disk_mib=3727, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 283 with external jobid '256697688 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-cnt.tissue-testis.out'.
+
+[Sun Mar 26 14:59:24 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/epi_h/result.txt
+    jobid: 135
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=vol, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2175, disk_mib=2075, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 135 with external jobid '256697689 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:24 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/epi_h/result.txt
+    jobid: 132
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/epi_h/result.txt
+    wildcards: mpheno=expression, inheri=additive, trait=tail, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2200, disk_mib=2099, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 132 with external jobid '256697690 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-epi_h.out'.
+
+[Sun Mar 26 14:59:25 2023]
+rule SPrediXcan:
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/epi_h/result.txt
+    jobid: 284
+    reason: Missing output files: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/epi_h/result.txt
+    wildcards: mpheno=splicing, inheri=additive, trait=cnt, tissue=epi_h
+    resources: mem_mb=36000, mem_mib=34333, disk_mb=2654, disk_mib=2532, tmpdir=<TBD>, walltime=02:00
+
+Submitted job 284 with external jobid '256697691 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-cnt.tissue-epi_h.out'.
+[Sun Mar 26 15:04:05 2023]
+Error in rule SPrediXcan:
+    jobid: 141
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697660 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 141, external: 256697660 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.141.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:09 2023]
+Error in rule SPrediXcan:
+    jobid: 150
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697681 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 150, external: 256697681 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.150.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:09 2023]
+Error in rule SPrediXcan:
+    jobid: 144
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697682 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 144, external: 256697682 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.144.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:20 2023]
+Error in rule SPrediXcan:
+    jobid: 135
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697689 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 135, external: 256697689 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.135.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:20 2023]
+Error in rule SPrediXcan:
+    jobid: 132
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697690 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 132, external: 256697690 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.132.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:21 2023]
+Error in rule SPrediXcan:
+    jobid: 147
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697670 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 147, external: 256697670 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.147.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:21 2023]
+Error in rule SPrediXcan:
+    jobid: 66
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697661 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 66, external: 256697661 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.66.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:04:24 2023]
+Error in rule SPrediXcan:
+    jobid: 138
+    input: /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697676 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 138, external: 256697676 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.138.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:01 2023]
+Error in rule SPrediXcan:
+    jobid: 130
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697663 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 130, external: 256697663 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-tail.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.130.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:01 2023]
+Error in rule SPrediXcan:
+    jobid: 145
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697666 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 145, external: 256697666 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-ntar.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.145.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:02 2023]
+Error in rule SPrediXcan:
+    jobid: 142
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697671 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 142, external: 256697671 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-mot.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.142.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:03 2023]
+Error in rule SPrediXcan:
+    jobid: 148
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697678 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 148, external: 256697678 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-fbkall.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.148.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:04 2023]
+Error in rule SPrediXcan:
+    jobid: 139
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697685 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 139, external: 256697685 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-con.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.139.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:04 2023]
+Error in rule SPrediXcan:
+    jobid: 133
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697686 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 133, external: 256697686 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-vol.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.133.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:16 2023]
+Error in rule SPrediXcan:
+    jobid: 136
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697672 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 136, external: 256697672 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-cnt.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.136.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:17 2023]
+Error in rule SPrediXcan:
+    jobid: 1
+    input: /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/testis/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/expression/testis/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/expression/testis/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/testis/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697684 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-testis.out
+
+Error executing rule SPrediXcan on cluster (jobid: 1, external: 256697684 logs/SPrediXcan/mpheno-expression.inheri-additive.trait-head.tissue-testis.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:30 2023]
+Error in rule SPrediXcan:
+    jobid: 292
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/fbkall/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697679 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-fbkall.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 292, external: 256697679 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-fbkall.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.292.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:41 2023]
+Error in rule SPrediXcan:
+    jobid: 284
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/cnt/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697691 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-cnt.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 284, external: 256697691 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-cnt.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.284.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:42 2023]
+Error in rule SPrediXcan:
+    jobid: 280
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/tail/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697668 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-tail.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 280, external: 256697668 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-tail.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.280.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:43 2023]
+Error in rule SPrediXcan:
+    jobid: 288
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/mot/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697687 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-mot.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 288, external: 256697687 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-mot.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.288.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:53 2023]
+Error in rule SPrediXcan:
+    jobid: 286
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/con/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697669 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-con.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 286, external: 256697669 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-con.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.286.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:54 2023]
+Error in rule SPrediXcan:
+    jobid: 215
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/head/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697665 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-head.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 215, external: 256697665 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-head.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.215.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:07:55 2023]
+Error in rule SPrediXcan:
+    jobid: 282
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/vol/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697680 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-vol.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 282, external: 256697680 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-vol.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.282.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sun Mar 26 15:08:07 2023]
+Error in rule SPrediXcan:
+    jobid: 290
+    input: /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db, /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt, /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz
+    output: /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/epi_h/result.txt
+    shell:
+        
+        /cluster/home/nkadri/TWAS/MetXcan/software/SPrediXcan.py          --model_db_path /cluster/work/pausch/naveen/TWAS/splicing/epi_h/filtered_signif.db         --covariance /cluster/work/pausch/naveen/TWAS/splicing/epi_h/covariances.txt.gz          --gwas_file /cluster/work/pausch/naveen/TWAS/GWAS/additive/ntar/gwas.txt         --snp_column SNP         --effect_allele_column A2         --non_effect_allele_column A1         --beta_column BETA         --pvalue_column P         --output_file /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/epi_h/result.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 256697673 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-ntar.tissue-epi_h.out
+
+Error executing rule SPrediXcan on cluster (jobid: 290, external: 256697673 logs/SPrediXcan/mpheno-splicing.inheri-additive.trait-ntar.tissue-epi_h.out, jobscript: /cluster/home/nkadri/TWAS/SNAKES/spredi/.snakemake/tmp.660vnqdq/snakejob.SPrediXcan.290.sh). For error details see the cluster log and the log files of the involved rule(s).
+Terminating processes on user request, this might take some time.
+No --cluster-cancel given. Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.

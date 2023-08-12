@@ -1,0 +1,7 @@
+tissue mpheno ngenes ngood
+testis expression 17636 8826
+epi_h expression 17288 4293
+vas_d expression 16329 2691
+testis splicing 135443 29516
+epi_h splicing 112068 11554
+vas_d splicing 102041 5356

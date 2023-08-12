@@ -1,0 +1,36 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /cluster/home/nkadri/TWAS/SNAKES/spredi/spredi.smk, line 33:
+Missing input files for rule all:
+    affected files:
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/cnt/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/con/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/cnt/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/head/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/head/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/cnt/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/tail/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/vol/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/vol/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/ntar/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/mot/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/fbkall/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/vol/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/mot/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/tail/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/vol/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/head/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/con/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/mot/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/mot/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/nonadditive/con/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/con/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/ntar/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/tail/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/ntar/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/ntar/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/splicing/SprediXcan/additive/cnt/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/additive/tail/result_with_cords.txt.gz
+        /cluster/work/pausch/naveen/TWAS/expression/SprediXcan/nonadditive/head/result_with_cords.txt.gz
