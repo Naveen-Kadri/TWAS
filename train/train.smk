@@ -1,41 +1,19 @@
 '''
-there are some parameters hard-coded into the training models
-like the maf .. may be put it in the params ?
 ref : https://github.com/hakyimlab/PredictDB-Tutorial
 24-10-2022
 '''
 configfile: '/cluster/home/nkadri/TWAS/SNAKES/config.yaml'
 OUT_DIR = '/cluster/work/pausch/naveen/TWAS'
-# FILES
-# 10 peer factors, 3 PCs, RIN, and age
-# covariates = '/cluster/work/pausch/xena/eQTL/cis_all/{tissue}/{tissue}_covariates.txt'
-# tpmg = '/cluster/work/pausch/naveen/TWAS/TPM/{tissue}.tsv'
-gtf = "/cluster/work/pausch/naveen/ASE/INPUTS/Bos_taurus.ARS-UCD1.2.104.gtf.gz"
-# vcf = "/cluster/work/pausch/naveen/ASE/VCF/chr_{chr}_beagle5.2.vcf.gz"
-
-# new file with no / less stringent filter for HWE
-# y
 
 # WILDCARDS
 chromosomes = range(1, 30)
 tissues = ['testis', 'epi_h', 'vas_d']
-#mphenos = ['splicing', 'expression']
 mphenos = ['expression', 'splicing']
 
 
-# TEST
-#mphenos = ['expression']
-#tissues = ['testis']
-#chromosomes = [25]
-
-# rule all:
-#     input:
-#         expand(OUT_DIR +
-#                '/{mpheno}/{tissue}/CHR{chr}/covariance.txt', mpheno=mphenos, tissue=tissues, chr=chromosomes),
-#         expand(OUT_DIR + '/{mpheno}/{tissue}/covariances.txt.gz',
-#                mpheno=mphenos, tissue=tissues),
-#         expand(OUT_DIR + '/{mpheno}/{tissue}/filtered_signif.db',
-#                mpheno=mphenos, tissue=tissues)
+rule all:
+    input:
+        expand(OUT_DIR + '/{mpheno}/{tissue}/covariances.txt.gz',mpheno=mphenos, tissue=tissues),
 
 
 rule expression_annotation:
